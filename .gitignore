@@ -1,0 +1,76 @@
+# ===============================
+# Archivos y carpetas de Python
+# ===============================
+__pycache__/
+*.py[cod]
+*$py.class
+.py
+
+# Archivos de entorno
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Archivos de configuración de IDEs
+.vscode/
+.idea/
+
+# Archivos de log
+*.log
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de pruebas / coverage
+.pytest_cache/
+.coverage
+.tox/
+.mypy_cache/
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+*.hypothesis/
+
+# Archivos compilados / paquetes
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ===============================
+# Archivos específicos del proyecto
+# ===============================
+
+# Archivos de salida de tu script
+estructura_proyecto.txt
+
+# Archivos PHP de configuración sensible
+config.php
+config/*
+
+# Base de datos o backups
+*.sql
+*.sqlite3
+*.db
+
+# Carpeta de Git (no versionar dentro del repo)
+.git/
+
+# Node (si usas npm/yarn en frontend)
+node_modules/
