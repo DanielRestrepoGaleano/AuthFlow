@@ -21,7 +21,7 @@
 
 
 // Incluir el encabezado de la página
-require_once 'src/includes/header.php';
+require_once 'includes/header.php';
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" >
 <div class="container mt-5">
@@ -75,5 +75,5 @@ require_once 'src/includes/header.php';
 <?php
 
 // Incluir el pie de página
-require_once 'src/includes/footer.php'
+require_once 'includes/footer.php'
 ?>
