@@ -1,5 +1,51 @@
 <?php
 
+// ¡RUTAS CORREGIDAS! Ahora se accede directamente a la carpeta 'core'
+require_once 'core/validation_logic.php';
+require_once 'core/user_logic.php';
+require_once 'core/auth_logic.php';
+
+// Inicializar un array para almacenar los errores
+$errors = [];
+
+// Verificar si el formulario ha sido enviado usando el método POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // 1. Recoger los datos del formulario
+    $username = trim($_POST['username']);
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+
+    // 2. Validaciones
+    // HU-07: Validar que los campos no estén vacíos
+    if (empty($username) || empty($email) || empty($password) || empty($confirm_password)) {
+        $errors[] = "Todos los campos son obligatorios.";
+    }
+
+    // Validar que las contraseñas coincidan
+    if ($password !== $confirm_password) {
+        $errors[] = "Las contraseñas no coinciden.";
+    }
+    
+    // HU-01: ¡LÍNEA ACTIVADA! Validar la política de seguridad de la contraseña
+    // Ahora llamamos a la función que creamos en validation_logic.php
+    if (!validarPoliticaContraseña($password)) {
+        $errors[] = "La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial.";
+    }
+
+    // (Las siguientes validaciones siguen pendientes)
+    // HU-04: Verificar si el correo electrónico ya existe
+    // if (emailExiste($email)) { ... }
+    
+    // 3. Si no hay errores, proceder con el registro
+    if (empty($errors)) {
+        // Lógica de registro (pendiente)
+    }
+}
+
+// </php
+
 /**
  * Página de registro de usuarios.
  * 
@@ -18,6 +64,8 @@
  * - Contenedor centrado con Bootstrap
  * - Card con header, body y footer
  */
+
+
 
 
 // Incluir el encabezado de la página

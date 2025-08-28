@@ -1,4 +1,4 @@
-/* Archivo: validation_logic.php */
+
 <?php
 
 /**
